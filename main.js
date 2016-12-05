@@ -15,7 +15,6 @@ for (var i = anime_list.length - 1; i >= 0; i--)
 
 for (var i = 0; i < anime_list.length; i++)
 {
-    var rank = anime_list[i].getElementsByClassName('top-anime-rank-text');
-    console.log(rank);
+    var rank = anime_list[i].getElementsByClassName('top-anime-rank-text')[0];
     rank.innerHTML = i + 1;
 }
