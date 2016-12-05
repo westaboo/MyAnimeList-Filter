@@ -20,7 +20,11 @@ for (var i = anime_list.length - 1; i >= 0; i--)
     }
 }
 
-for (var i = 0; i < anime_list.length; i++)
+var baseURL = anime_list[0].getElementsByClassName('fw-b')[0].baseURI;
+var limitLocation = baseURL.search('limit=');
+var beginning = parseInt(baseURL.substr(limitLocation + 6));
+
+for (var i = beginning; i < anime_list.length + beginning; i++)
 {
     var rank = anime_list[i].getElementsByClassName('top-anime-rank-text')[0];
     rank.innerHTML = i + 1;
