@@ -2,14 +2,21 @@
 
 
 var anime_list = document.getElementsByClassName('ranking-list');
+var to_remove = new Set();
+
+to_remove.add('Gintama');
 
 for (var i = anime_list.length - 1; i >= 0; i--)
 {   
     var elementName = anime_list[i].getElementsByClassName('fw-b')[0].innerHTML;
     
-    if (elementName.includes("Gintama"))
+    for (let anime of to_remove)
     {
-        anime_list[i].remove();
+        if (elementName.includes(anime))
+        {
+                anime_list[i].remove();
+                break;
+        }
     }
 }
 
