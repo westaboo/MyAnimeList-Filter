@@ -3,7 +3,7 @@
 
 var anime_list = document.getElementsByClassName('ranking-list');
 
-for (var i = anime_list.length - 1; i <= 0; i--)
+for (var i = anime_list.length - 1; i >= 0; i--)
 {   
     var elementName = anime_list[i].getElementsByClassName('fw-b')[0].innerHTML;
     
