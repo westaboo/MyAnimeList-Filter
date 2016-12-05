@@ -1,10 +1,20 @@
-// removes Gintama from all MyAnimeList Top Anime list
+// Default behavior removes all titles with Gintama and Haikyuu from 
+// the MyAnimeList Top Anime list. Edit to be what ever you want.
 
+///////////////////////////////////////////////////////////////
 
-var anime_list = document.getElementsByClassName('ranking-list');
 var to_remove = new Set();
 
+// to add filtered anime, follow the template of the line below
+
 to_remove.add('Gintama');
+to_remove.add('Haikyuu!!');
+
+///////////////////////////////////////////////////////////////
+
+// Removes elements whose titles match from the set made above
+
+var anime_list = document.getElementsByClassName('ranking-list');
 
 for (var i = anime_list.length - 1; i >= 0; i--)
 {   
@@ -20,17 +30,16 @@ for (var i = anime_list.length - 1; i >= 0; i--)
     }
 }
 
+// Gets starting number to start numbering from
+
 var baseURL = anime_list[0].getElementsByClassName('fw-b')[0].baseURI;
 var limitLocation = baseURL.search('limit=');
+var beginning = 0;
 
 if (limitLocation != -1)
-{
-    var beginning = parseInt(baseURL.substr(limitLocation + 6));
-}
-else
-{
-    var beginning = 0;
-}
+    beginning = parseInt(baseURL.substr(limitLocation + 6));
+
+// Renumbers all anime
 
 for (var i = 0; i < anime_list.length; i++)
 {
