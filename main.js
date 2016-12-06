@@ -16,6 +16,7 @@ var anime_list = document.getElementsByClassName('ranking-list');
 
 filter(to_remove);
 renumber();
+numberHidden();
 
 // Removes elements whose titles match from the set made above
 
@@ -54,4 +55,14 @@ function renumber() {
         var rank = anime_list[i].getElementsByClassName('top-anime-rank-text')[0];
         rank.innerHTML = i + 1 + beginning;
     }
+}
+
+function numberHidden() {
+    
+    var nHidden = 50 - anime_list.length;
+
+    var statement = document.createElement('div');
+    statement.innerHTML = 'Hiding ' + nHidden.toString() + 'anime titles.'
+
+    document.getElementById('content').appendChild(statement);
 }
