@@ -1,6 +1,4 @@
-// Default behavior removes all titles with Gintama and Haikyuu from 
-// the MyAnimeList Top Anime list. Edit to be what ever you want.
-
+// gets all anime and creates a list for ones that are removed
 
 var anime_list = document.getElementsByClassName('ranking-list');
 var removed = [];
