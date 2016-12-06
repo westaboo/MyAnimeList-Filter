@@ -63,9 +63,12 @@ function numberHidden() {
     
     var nHidden = 50 - anime_list.length;
 
-    var statement = document.createElement('div');
-    statement.innerHTML = 'Hiding ' + nHidden.toString() + ' anime titles: ' +
-                          removed.sort().join(', ') + '.';
+    if (nHidden > 0)
+    {
+        var statement = document.createElement('div');
+        statement.innerHTML = 'Hiding ' + nHidden.toString() + ' anime titles: ' +
+                              removed.sort().join(', ') + '.';
 
-    document.getElementById('content').appendChild(statement);
+        document.getElementById('content').appendChild(statement);
+    }
 }
