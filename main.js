@@ -5,8 +5,8 @@ var removed = [];
 
 // Removes elements whose titles match from the set made above
 
-function filter(to_remove) {
-
+function filter(to_remove)
+{
     for (var i = anime_list.length - 1; i >= 0; i--)
     {   
         var elementName = anime_list[i].getElementsByClassName('fw-b')[0].innerHTML;
@@ -26,8 +26,8 @@ function filter(to_remove) {
 
 // Gets starting number to start numbering from
 
-function renumber() {
-
+function renumber()
+{
     var limitLocation = document.URL.search('limit=');
     var beginning = 0;
 
@@ -46,8 +46,8 @@ function renumber() {
 
 // Displays hidden message on bottom
 
-function numberHidden() {
-    
+function numberHidden()
+{    
     var nHidden = 50 - anime_list.length;
 
     if (nHidden > 0)
@@ -55,7 +55,6 @@ function numberHidden() {
         var statement = document.createElement('div');
         statement.innerHTML = 'Hiding ' + nHidden.toString() + ' anime titles: ' +
                               removed.sort().join(', ') + '.';
-
         document.getElementById('content').appendChild(statement);
     }
 }
