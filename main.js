@@ -65,7 +65,7 @@ function numberHidden() {
 
     var statement = document.createElement('div');
     statement.innerHTML = 'Hiding ' + nHidden.toString() + ' anime titles: ' +
-                          removed.join(', ') + '.';
+                          removed.sort().join(', ') + '.';
 
     document.getElementById('content').appendChild(statement);
 }
