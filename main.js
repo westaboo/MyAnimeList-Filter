@@ -1,23 +1,9 @@
 // Default behavior removes all titles with Gintama and Haikyuu from 
 // the MyAnimeList Top Anime list. Edit to be what ever you want.
 
-///////////////////////////////////////////////////////////////
-
-var to_remove = new Set();
-
-// to add filtered anime, follow the template of the line below
-
-to_remove.add('Gintama');
-to_remove.add('Haikyuu!!');
-
-///////////////////////////////////////////////////////////////
 
 var anime_list = document.getElementsByClassName('ranking-list');
 var removed = [];
-
-filter(to_remove);
-renumber();
-numberHidden();
 
 // Removes elements whose titles match from the set made above
 
@@ -58,6 +44,9 @@ function renumber() {
         rank.innerHTML = i + 1 + beginning;
     }
 }
+
+
+// Displays hidden message on bottom
 
 function numberHidden() {
     
