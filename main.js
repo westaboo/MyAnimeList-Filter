@@ -13,6 +13,7 @@ to_remove.add('Haikyuu!!');
 ///////////////////////////////////////////////////////////////
 
 var anime_list = document.getElementsByClassName('ranking-list');
+var removed = [];
 
 filter(to_remove);
 renumber();
@@ -30,6 +31,7 @@ function filter(to_remove) {
         {
             if (elementName.includes(anime))
             {
+                removed.push(elementName);
                 anime_list[i].remove();
                 break;
             }
@@ -62,7 +64,8 @@ function numberHidden() {
     var nHidden = 50 - anime_list.length;
 
     var statement = document.createElement('div');
-    statement.innerHTML = 'Hiding ' + nHidden.toString() + 'anime titles.'
+    statement.innerHTML = 'Hiding ' + nHidden.toString() + ' anime titles: ' +
+                          removed.join(', ') + '.';
 
     document.getElementById('content').appendChild(statement);
 }
