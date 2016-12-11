@@ -1,16 +1,36 @@
-// gets all anime and creates a list for ones that are removed
+var to_remove = new Set();
+to_remove.add('Gintama');
 
 var anime_list = document.getElementsByClassName('ranking-list');
 var removed = [];
+
+
+// switches
+
+chrome.storage.sync.get("isOn", function(m) {
+  if(m.isOn)
+  {
+    filter(to_remove);
+
+    chrome.storage.sync.get("renumberIsOn", function(r) {
+      if(r.renumberIsOn) {renumber();}
+    });
+
+    chrome.storage.sync.get("footerIsOn", function(f) {
+      if(f.footerIsOn) {footer();}
+    });
+  }
+});
+
 
 // Removes elements whose titles match from the set made above
 
 function filter(to_remove)
 {
     for (var i = anime_list.length - 1; i >= 0; i--)
-    {   
+    {
         var elementName = anime_list[i].getElementsByClassName('fw-b')[0].innerHTML;
-        
+
         for (let anime of to_remove)
         {
             if (elementName.includes(anime))
@@ -46,8 +66,8 @@ function renumber()
 
 // Displays hidden message on bottom
 
-function numberHidden()
-{    
+function footer()
+{
     var nHidden = 50 - anime_list.length;
 
     if (nHidden > 0)

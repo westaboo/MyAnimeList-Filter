@@ -1,16 +1,11 @@
-# MAL-HideTopAnime
+# MAL-Filter
 
-Working on making this a chrome extension with user interface.
+Filter out anime from MyAnimeList's top anime page.
 
-For now it can be used as a TamperMonkey/GreaseMonkey script by either copying the contents of main.js into a new script or adding
-
-```javascript
-$.getScript("https://rawgit.com/westaboo/MAL-HideTopAnime/master/main.js");
-```
-to a new script.
-
-By default, the script filters out Gintama and Haikyuu!! You can change this and edit it to whatever you would like. Simply add the lines, following the template below.
+For now, the extension only filters out Gintama. You can change this and edit it to whatever you would like. Simply add the lines to main.js, following the template below.
 
 ```javascript
 to_remove.add(NAME_OF_ANIME);
 ```
+
+You won't have to do the above for long. I am working on adding a user interface to add custom anime titles.
