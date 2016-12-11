@@ -43,12 +43,13 @@ function setValues() {
 
 // SET SWITCH VALUES
 
-try {
+try
+{
   setValues();
 }
 catch(err)
 {
-  console.log('failed');
+    console.log('failed');
 }
 
 

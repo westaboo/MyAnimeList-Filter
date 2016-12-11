@@ -5,7 +5,7 @@
 
     "description": "Filters out anime with a given pattern from the Top Anime page on MyAnimeList",
 
-    "version": "1.0",
+    "version": "0.1",
 
     "icons": {
       "16": "icon16.png",
