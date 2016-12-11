@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+
+    "name": "MyAnimeList Filter",
+
+    "description": "Filters out anime with a given pattern from the Top Anime page on MyAnimeList",
+
+    "version": "1.0",
+
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+
+    "content_scripts": [
+      {
+        "matches": ["https://myanimelist.net/topanime.php*"],
+        "js": ["main.js"]
+      }
+    ]
+}
