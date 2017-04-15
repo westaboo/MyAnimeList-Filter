@@ -1,10 +1,8 @@
 <html>
 
   <head>
-
     <title>Filter Anime</title>
     <link rel = "stylesheet" href = "style.css">
-
   </head>
 
 
@@ -22,17 +20,26 @@
             <div class = "slider round"></div>
         </label>
 
-        <div class = "switch-text unselectable">Renumber</div>
+        <div class = "separator"></div>
+        <div class = "separator-text unselectable">Extras</div>
+        <div class = "separator"></div>
+
+        <div class = "switch-text unselectable" title = "renumbers top anime list after removing filtered anime">Renumber</div>
         <label class = "switch">
             <input id = "s-renumber" type = "checkbox">
             <div class = "slider round"></div>
         </label>
 
-        <div class = "switch-text unselectable">Footer</div>
+        <div class = "switch-text unselectable"
+          title = "if anime are filtered out, their titles will be listed at bottom of the page">Footer</div>
         <label class = "switch">
             <input id = "s-footer" type = "checkbox">
             <div class = "slider round"></div>
         </label>
+
+        <button id = "go-to-options" class = "options-button">
+          Options
+        </button>
 
         <script type="text/javascript" src="./popup.js"></script>
 

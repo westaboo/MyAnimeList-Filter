@@ -3,6 +3,7 @@
 var onOffSwitch = document.getElementById('s-m');
 var renumberSwitch = document.getElementById('s-renumber');
 var footerSwitch = document.getElementById('s-footer');
+var optionsButton = document.getElementById('go-to-options');
 
 
 // GETS NEW SAVED VALUES
@@ -10,13 +11,6 @@ var footerSwitch = document.getElementById('s-footer');
 function saveValues()
 {
   chrome.storage.sync.set({"isOn": onOffSwitch.checked});
-
-  if(!onOffSwitch.checked)
-  {
-    renumberSwitch.checked = false;
-    footerSwitch.checked = false;
-  }
-
   chrome.storage.sync.set({"renumberIsOn": renumberSwitch.checked});
   chrome.storage.sync.set({"footerIsOn": footerSwitch.checked});
 }
@@ -58,3 +52,13 @@ catch(err)
 onOffSwitch.addEventListener('click', saveValues);
 renumberSwitch.addEventListener('click', saveValues);
 footerSwitch.addEventListener('click', saveValues);
+
+optionsButton.addEventListener('click', function() {
+  if (chrome.runtime.openOptionsPage) {
+    // New way to open options pages, if supported (Chrome 42+).
+    chrome.runtime.openOptionsPage();
+  } else {
+    // Reasonable fallback.
+    window.open(chrome.runtime.getURL('options.html'));
+  }
+});
