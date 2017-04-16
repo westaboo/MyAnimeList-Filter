@@ -4,21 +4,25 @@ body {
   margin: 0px;
 }
 
+br {
+  line-height: 0px;
+}
+
 .add-new-button {
-  background-color: #00b1a2;
-  padding: 15px 20px;
+  background-color: #1b5854;
+  padding: 10px 15px;
   width: 150px;
   text-align: center;
   color: white;
   border-radius: 7px;
-  margin: 20px auto;
+  margin: 0px 4px 20px 4px;
   transition: .2s background;
   cursor: pointer;
   display: inline-block;
 }
 
 .add-new-button:hover {
-  background-color: #0ebfb0;
+  background-color: #247570;
 }
 
 #container {
@@ -29,11 +33,14 @@ body {
 
 .header {
   width: 100%;
-  background: url('header-background.gif');
   background-size: 100px;
   color: white;
   text-align: center;
   padding: 20px 0px;
+}
+
+.header-background {
+  background: url('header-background.gif');
 }
 
 input:checked + .slider {
@@ -72,22 +79,31 @@ input:checked + .slider:before {
 }
 
 #options-container {
-  margin: 40px 40px 20px 40px;
+  margin: 0px 40px 20px 40px;
   text-align: center;
 }
 
 #options-container input {
   border-radius: 0px;
   width: 400px;
-  padding: 15px 10px;
+  padding: 10px 5px;
   display: inline-block;
   margin: 6px 0;
+  background: #1b5854;
+  border: 1px solid #1b5854;
+  color: white;
+  transition: .2s all;
+}
+
+#options-container input:focus {
+  background: #247570;
+  border: 1px solid #247570;
 }
 
 .remove-filter {
-  background-color: #ff8484;
+  background-color: #123b38;
   display: inline-block;
-  padding: 16px 16px;
+  padding: 11px 11px;
   color: white;
   margin-left: -5px;
   cursor: pointer;
@@ -95,7 +111,7 @@ input:checked + .slider:before {
 }
 
 .remove-filter:hover {
-  background-color: #ff8080;
+  background-color: #0c2725;
 }
 
 .separator {
@@ -172,4 +188,8 @@ input:checked + .slider:before {
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+}
+
+::-webkit-input-placeholder {
+  color: #bbbbbb;
 }
